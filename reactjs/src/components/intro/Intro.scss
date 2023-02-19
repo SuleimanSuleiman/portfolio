@@ -1,2 +1,134 @@
 @import "../helpers/Global.scss";
 @import "../helpers/mixin.scss";
+
+
+.containerIntro{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    @include mobile{
+        flex-direction: column;
+    }
+    .left,.right{            
+        width: 100%;
+        height: 100%;
+    }
+    .left{
+        @include displayFlex;
+        .containerImage{
+            width: 80%;
+            height: 80%;
+            background-color: $mainColor;
+            position: relative;
+            border-radius: 40% 40% 40% 0;
+            -webkit-border-radius: 40% 40% 40% 0;
+            -moz-border-radius: 40% 40% 40% 0;
+            -ms-border-radius: 40% 40% 40% 0;
+            -o-border-radius: 40% 40% 40% 0;
+            overflow: hidden;
+        }
+        img{
+            width: 500px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-45%);
+            -webkit-transform: translate(-50%,-45%);
+            -moz-transform: translate(-50%,-45%);
+            -ms-transform: translate(-50%,-45%);
+            -o-transform: translate(-50%,-45%);
+            @include mobile{
+                width: 300px;
+            }
+}
+    }
+    .right{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-left: 20px;
+        position: relative;
+        @include mobile{
+            display: block;
+            padding: 12px
+        }
+        p{
+            &:first-of-type{
+                font-size: 30px;
+                font-weight: bold;
+                margin: 0;
+                @include mobile{
+                    text-align: center;
+                }
+            }
+            &:nth-child(2){
+                font-size: 50px;
+                font-weight: bold;
+                color: $mainColor;
+                text-align: start;
+                @include mobile{
+                    margin: 0;
+                    font-size: 40px;
+                    margin-top: 12px;
+                    text-align: center;
+                }
+            }
+            &:last-of-type{
+                font-size: 30px;
+                font-weight: bold;
+                span{
+                    color: $mainColor;
+                    @include mobile{
+                        display: block;
+                        margin-top: 12px;
+                    }
+                }
+                @include mobile{
+                    text-align: center;
+                }
+            }
+        }
+        .arrow{
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            cursor: pointer;
+            @include mobile{
+                display: none;
+            }
+            img{
+                width: 40px;
+                height: 40px;
+            }
+            animation-name: arrowMoves;
+            animation-timing-function: ease-in-out;
+            animation-fill-mode: both;
+            animation-iteration-count: infinite;
+            animation-duration: 3s;
+        }  
+    }
+}
+
+
+@keyframes arrowMoves{
+    0%{
+        transform: translateY(0);
+        -webkit-transform: translateY(0);
+        -moz-transform: translateY(0);
+        -ms-transform: translateY(0);
+        -o-transform: translateY(0);
+}50%{
+         transform: translateY(20px);
+        -webkit-transform: translateY(20px);
+        -moz-transform: translateY(20px);
+        -ms-transform: translateY(20px);
+        -o-transform: translateY(20px);       
+    }
+    100%{
+          transform: translateY(0);
+          -webkit-transform: translateY(0);
+          -moz-transform: translateY(0);
+          -ms-transform: translateY(0);
+          -o-transform: translateY(0);
+}
+}
