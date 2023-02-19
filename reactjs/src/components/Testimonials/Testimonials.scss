@@ -1,0 +1,115 @@
+@import "../helpers/Global.scss";
+@import "../helpers/mixin.scss";
+
+.TestimonialsContainer{
+    display: flex;
+    flex-direction: column;
+    .title{
+        font-size: 30px;
+        font-weight: bold;
+        text-align: center;
+        h2{
+            margin-bottom: -10px;
+            @include mobile{
+                margin-bottom: 10px;
+            }
+        }
+    }
+    .sliders{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        @include mobile{
+            flex-direction: column;
+            padding-top: 340px;
+            overflow-y: scroll;
+            background-color: #ccc;
+            width: 70%;
+            margin: 10px auto;
+            border-radius: 20px;
+            -webkit-border-radius: 20px;
+            -moz-border-radius: 20px;
+            -ms-border-radius: 20px;
+            -o-border-radius: 20px;
+        }
+        .item{
+            width: 250px;
+            height: 70%;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            padding: 20px;
+            margin: 0 10px;
+            box-shadow: 5px 7px 10px 1px rgba(75, 75, 75, 0.72);
+            -webkit-box-shadow: 5px 7px 10px 1px rgba(75, 75, 75, 0.72);
+            -moz-box-shadow: 5px 7px 10px 1px rgba(75, 75, 75, 0.72);
+            cursor: pointer;
+            transition: all 0.5s ease-in-out;
+            -webkit-transition: all 0.5s ease-in-out;
+            -moz-transition: all 0.5s ease-in-out;
+            -ms-transition: all 0.5s ease-in-out;
+            -o-transition: all 0.5s ease-in-out;    
+            @include mobile{
+                width: 200px;
+                height: 100%;
+                margin: 20px 0;
+                background-color: #fff;
+            }     
+            .topbar{
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                .arrow{
+                    width: 30px;
+                    height: 30px;
+                }
+                .img{
+                    width: 50px;
+                    height: 50px;
+                    border-radius: 50%;
+                    -webkit-border-radius: 50%;
+                    -moz-border-radius: 50%;
+                    -ms-border-radius: 50%;
+                    -o-border-radius: 50%;
+                    object-fit: cover;
+                }
+                .icon{
+                    width: 30px;
+                    height: 30px;
+                }
+            }
+            .desc{
+                    background: $mainColor;
+                    color: $secondColor;
+                    border-radius: 12px;
+                    padding: 0 10px;
+            }
+            .title{
+                h5{
+                    margin: 0;
+                }
+            }
+            .paragraph{
+                text-align: center;
+                @include mobile{
+                    display: none;
+                }
+            }
+            &:hover{
+                transform: scale(1.1);
+                -webkit-transform: scale(1.1);
+                -moz-transform: scale(1.1);
+                -ms-transform: scale(1.1);
+                -o-transform: scale(1.1);
+                background-color: $mainColor;
+                .desc{
+                    color: $mainColor;
+                    background-color: $secondColor;
+                }
+            }    
+        }
+    }
+
+}

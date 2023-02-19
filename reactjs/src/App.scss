@@ -1,0 +1,26 @@
+@import "./components/helpers/Global.scss";
+@import "./components/helpers/mixin.scss";
+.App{
+    position: relative;
+    overflow: hidden;
+    .sections{
+    width: 100%;
+    height: calc(100vh - 70px);
+    scroll-snap-type: y mandatory;
+    margin-top: 70px;
+    scrollbar-width: none;
+    scroll-behavior: smooth;
+    overflow-y: scroll;
+    &::-webkit-scrollbar{
+        display: none;
+    }
+    > *{
+        width: 100%;
+        height: calc(100vh - 70px);
+        scroll-snap-align: start;
+    }
+    @include mobile{
+        scroll-snap-type: none;
+    }
+}   
+}

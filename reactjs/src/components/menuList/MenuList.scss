@@ -1,0 +1,32 @@
+@import "../helpers/Global.scss";
+@import "../helpers/mixin.scss";
+
+.menu{
+    transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    position: absolute;
+    right: -200px;
+    top: 0;
+    height: 100%;
+    background-color: $secondColor;
+    width: 200px;
+    @include displayFlex;
+    z-index: 2;
+    &.active{
+        right: 0;
+    }
+    .listed{
+        @include listed;
+        .item{
+            padding: 10px 20px;
+            a{
+                text-decoration: none;
+                color: $mainColor;
+                font-size: 20px;
+            }
+        }
+    }
+}
