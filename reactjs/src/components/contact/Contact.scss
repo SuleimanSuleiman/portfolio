@@ -1,0 +1,65 @@
+@import "../helpers/Global.scss";
+@import "../helpers/mixin.scss";
+
+
+.contactContainer{
+    display: flex;
+    @include mobile{
+        flex-direction: column;
+    }
+    .left,
+    .right{
+        width: 100%;
+        height: 100%;
+    }
+    .left{
+        @include displayFlex;
+        @include mobile{
+            display: none
+        }
+    }
+    .right{
+        @include displayFlex;
+        flex-direction: column;
+        @include mobile{
+            display: flex;
+            justify-content: start;
+        }
+        h3{
+            font-size: 40px;
+            font-weight: normal;
+        }
+        input{
+            width: 50%;
+            height: 40px;
+            border: 1 solid #ddd;
+            outline: none;
+            padding-left: 12px;
+            &:focus{
+                border: 2px solid $mainColor     
+            }
+        }
+        textarea{
+            width: 50%;
+            height: 200PX;
+            border: 1 solid #ddd;
+            margin-top: 20px;
+            outline: none;
+            padding: 12px;    
+            &:focus{
+                border: 2px solid $mainColor     
+            }
+        }
+
+        button{
+            margin: 18px;
+            border: none;
+            padding: 5px 50px;
+            background: $mainColor;
+            color: #fff;
+            cursor: pointer;
+            border-radius: 12px;
+            font-size: 18px;
+        }
+    }
+}
